@@ -20,12 +20,20 @@ public class TestLibretto {
 		libr.add(new Voto(25,"Sistemi di produzione",LocalDate.of(2018, 9, 26)));
 		
 		List<Voto>venticinque =libr.cercaVoti(25);
+		
 		System.out.println(venticinque);
 		Voto v1= libr.cercaEsame("Analisi 1");
 		Voto v2= libr.cercaEsame("Analisi 3");
-		
 		System.out.println(v1);
 		System.out.println(v2);
+		
+		Voto v3= new Voto(12,"Geometria",LocalDate.now());
+		Voto v4= new Voto(18,"Geometria",LocalDate.now());
+		Voto v5= new Voto(30,"Merendine",LocalDate.now());
+		System.out.format("Il voto %s e' %s\n",v3.toString(),libr.esisteVoto(v3));
+		System.out.format("Il voto %s e' %s\n",v4.toString(),libr.esisteVoto(v4));
+		System.out.format("Il voto %s e' %s\n",v5.toString(),libr.esisteVoto(v5));
+		
 	}
 
 }

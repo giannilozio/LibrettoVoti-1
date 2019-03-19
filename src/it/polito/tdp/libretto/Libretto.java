@@ -41,17 +41,23 @@ public class Libretto {
 	 * @return il voto corrispondente oppure null se non c'e quell esame
 	 */
 	public Voto cercaEsame(String nomeEsame) {
-		for(Voto v: voti) {
+		/*for(Voto v: voti) {
 			if(v.getCorso().compareTo(nomeEsame)==0) { // .equals(nomeEsame); ES coordinate 22 34 != ma compareto non sa risp
 				return v;
 			}
 		}
 		return null;
-	
+	*/
+		Voto v= new Voto(0,nomeEsame,null); // creo un voto fake per avere l oggetto che mi richiede il metodo indexof
+		int pos= voti.indexOf(v);			// anche se a me interessa solo il nome dell esame
+		if(pos==-1)
+		return null;
+		else
+			return voti.get(pos); // ho l indice di quell oggetto e ritorno quel voto con quell indice
 	}
 	
 	public boolean esisteVoto(Voto v) {
-		Voto trovato= this.cercaEsame(v.getCorso());
+		/*Voto trovato= this.cercaEsame(v.getCorso());
 		
 		if(trovato==null)
 				return false;
@@ -62,4 +68,12 @@ public class Libretto {
 			return false;
 		}
     }	
+    */
+		int pos= voti.indexOf(v);
+		if(pos==-1) {
+			return false;
+		}else	
+			return (v.getPunti()==voti.get(pos).getPunti());
+		
+	}
 }
