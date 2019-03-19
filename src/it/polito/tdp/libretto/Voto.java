@@ -23,7 +23,7 @@ public class Voto {
 		this.punti = voto;
 	}
 
-	@Override
+	@Override // MI STAMPA L OGGETTO
 	public String toString() {
 		return String.format("Voto [voto=%s, corso=%s, data=%s]", punti, corso, data);
 	}

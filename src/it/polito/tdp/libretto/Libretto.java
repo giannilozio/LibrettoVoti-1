@@ -35,4 +35,19 @@ public class Libretto {
 		return result;
 	}
 	
+	/**
+	 * Ricerca un voto relativo al corso di cui mi passa il nome
+	 * @param nomeEsame
+	 * @return il voto corrispondente oppure null se non c'e quell esame
+	 */
+	public Voto cercaEsame(String nomeEsame) {
+		for(Voto v: voti) {
+			if(v.getCorso().compareTo(nomeEsame)==0) { // .equals(nomeEsame); ES coordinate 22 34 != ma compareto non sa risp
+				return v;
+			}
+		}
+		return null;
+	
+	}
+	
 }	
