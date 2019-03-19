@@ -50,4 +50,16 @@ public class Libretto {
 	
 	}
 	
-}	
+	public boolean esisteVoto(Voto v) {
+		Voto trovato= this.cercaEsame(v.getCorso());
+		
+		if(trovato==null)
+				return false;
+		
+		if(trovato.getPunti()==v.getPunti()) {
+			return true;
+		}else {
+			return false;
+		}
+    }	
+}
