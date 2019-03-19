@@ -34,6 +34,14 @@ public class TestLibretto {
 		System.out.format("Il voto %s e' %s\n",v4.toString(),libr.esisteVoto(v4));
 		System.out.format("Il voto %s e' %s\n",v5.toString(),libr.esisteVoto(v5));
 		
+		System.out.format("Il voto %s e' in conflitto %s\n",v3.toString(),libr.votoInConflitto(v3));
+		System.out.format("Il voto %s e'in conflitto %s\n",v4.toString(),libr.votoInConflitto(v4));
+		System.out.format("Il voto %s e' in conflitto  %s\n",v5.toString(),libr.votoInConflitto(v5));
+		
+		System.out.println(libr.add(v3)); 
+		System.out.println(libr.add(v4)); 
+		System.out.println(libr.add(v5)); 
+		System.out.println(libr.toString());
 	}
 
 }
