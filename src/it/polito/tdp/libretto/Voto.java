@@ -14,6 +14,7 @@ public class Voto {
 		this.data = data;
 	}
 
+	
 	public int getVoto() {
 		return voto;
 	}
@@ -21,6 +22,12 @@ public class Voto {
 	public void setVoto(int voto) {
 		this.voto = voto;
 	}
+
+	@Override
+	public String toString() {
+		return String.format("Voto [voto=%s, corso=%s, data=%s]", voto, corso, data);
+	}
+
 
 	public String getCorso() {
 		return corso;
