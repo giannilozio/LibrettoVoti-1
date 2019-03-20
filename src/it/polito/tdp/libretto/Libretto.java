@@ -98,8 +98,38 @@ public class Libretto {
 		
 		
 	}
+	
 	public String toString() {
 		return this.voti.toString();
+	}
+	
+	public Libretto librettoMIgliorato() {
+		Libretto nuovo= new Libretto();
+		for(Voto v: this.voti) {
+			//nuovo.add(v);			 SE LO CAMBIO QUI CAMBIA ANCHE NELL ALTRO LIBRETTO
+			//nuovo.add(new Voto(v.getPunti(),v.getCorso(),v.getData())); // CLONO L OGGETTO DEL LIBRETTO PRECEDENTE
+		nuovo.add(v.clonati());
+		}
+		for(Voto v: nuovo.voti) {
+			int punti= v.getPunti();
+			if(punti<24) {
+				punti=punti + 1;
+			}
+				else if(punti <=28) {
+				punti+=2;
+				v.setPunti(punti);
+			}
+		}
+			return nuovo;
+	}
+	public void cancellaVoto() {
+		List<Voto> cancellare= new ArrayList<Voto>();
+		for(Voto v: voti) {
+			if(v.getPunti()<24) {
+				cancellare.add(v);
+			}
+		}
+		this.voti.removeAll(cancellare);
 	}
 	
 }

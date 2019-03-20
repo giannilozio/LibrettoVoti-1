@@ -72,5 +72,8 @@ public class Voto {
 		return true;
 	}
 	
+	public Voto clonati() {
+		return new Voto(this.punti,this.corso,this.data);
+	}
 	
 }

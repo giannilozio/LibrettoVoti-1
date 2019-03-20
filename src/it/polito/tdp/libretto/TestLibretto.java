@@ -42,6 +42,16 @@ public class TestLibretto {
 		System.out.println(libr.add(v4)); 
 		System.out.println(libr.add(v5)); 
 		System.out.println(libr.toString());
+		
+		System.out.println("***Migliora il libretto***");
+		
+		Libretto migliore = libr.librettoMIgliorato();
+		
+		System.out.println(libr.toString());
+		System.out.println(migliore.toString());
+		
+		migliore.cancellaVoto();
+		System.out.println(migliore.toString());
 	}
 
 }
